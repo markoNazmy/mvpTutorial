@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-class UserData : NSObject , NSCoding {
+import ObjectMapper
+class UserData : NSObject , NSCoding , Mappable{
  
     var version : String
     var givenName :String
@@ -47,6 +47,25 @@ class UserData : NSObject , NSCoding {
         aCoder.encode(token, forKey: "token")
 
         
+    }
+    
+    required init?(map: Map) {
+        self.version = ""
+        self.givenName = ""
+        self.surName = ""
+        self.userType = ""
+        self.token = ""
+    }
+ 
+    
+    
+    func mapping(map: Map) {
+        version    <- map["version"]
+        givenName   <- map["givenName"]
+        surName      <- map["surName"]
+        userType       <- map["userType"]
+        token  <- map["token"]
+
     }
 
 }

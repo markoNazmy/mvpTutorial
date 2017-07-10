@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7023B43D1F12194F00B83A50 /* UserPersonalDataContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B43C1F12194F00B83A50 /* UserPersonalDataContract.swift */; };
+		7023B43F1F121C0E00B83A50 /* UserPersonalDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B43E1F121C0E00B83A50 /* UserPersonalDataPresenter.swift */; };
+		7023B4411F121C6500B83A50 /* UserPersonalDataRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B4401F121C6500B83A50 /* UserPersonalDataRetriver.swift */; };
+		7023B4431F12308300B83A50 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B4421F12308300B83A50 /* ProductsViewController.swift */; };
+		7023B4451F124EEA00B83A50 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B4441F124EEA00B83A50 /* BaseViewController.swift */; };
+		7023B4471F12519500B83A50 /* VFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B4461F12519500B83A50 /* VFError.swift */; };
+		7023B4491F12545E00B83A50 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B4481F12545E00B83A50 /* ErrorManager.swift */; };
+		7023B44B1F1279A200B83A50 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7023B44A1F1279A200B83A50 /* BasePresenter.swift */; };
 		7035D27C1F11203800AC37D8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D27B1F11203800AC37D8 /* UserData.swift */; };
 		7035D27E1F1122D600AC37D8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D27D1F1122D600AC37D8 /* Product.swift */; };
+		7035D2801F11377800AC37D8 /* AuthenticationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D27F1F11377800AC37D8 /* AuthenticationContract.swift */; };
+		7035D2821F113C0000AC37D8 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D2811F113C0000AC37D8 /* LoginPresenter.swift */; };
+		7035D2841F113C1500AC37D8 /* LoginDataRetriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D2831F113C1500AC37D8 /* LoginDataRetriver.swift */; };
+		7035D2861F114D0900AC37D8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D2851F114D0900AC37D8 /* Network.swift */; };
+		7035D2881F11571700AC37D8 /* DataRetriverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D2871F11571700AC37D8 /* DataRetriverProtocol.swift */; };
+		7035D28A1F11778100AC37D8 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7035D2891F11778100AC37D8 /* UserDataViewController.swift */; };
 		705918741F0E6AC400471EBA /* vodafone_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 705918731F0E6AC400471EBA /* vodafone_thumb.png */; };
 		705918761F0E6D4D00471EBA /* 2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png in Resources */ = {isa = PBXBuildFile; fileRef = 705918751F0E6D4D00471EBA /* 2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png */; };
 		705918781F0E710F00471EBA /* gi.png in Resources */ = {isa = PBXBuildFile; fileRef = 705918771F0E710F00471EBA /* gi.png */; };
 		7065A26A1F0E5C6100AD9AC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065A2691F0E5C6100AD9AC1 /* AppDelegate.swift */; };
-		7065A26C1F0E5C6100AD9AC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065A26B1F0E5C6100AD9AC1 /* ViewController.swift */; };
+		7065A26C1F0E5C6100AD9AC1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065A26B1F0E5C6100AD9AC1 /* LoginViewController.swift */; };
 		7065A26F1F0E5C6100AD9AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7065A26D1F0E5C6100AD9AC1 /* Main.storyboard */; };
 		7065A2721F0E5C6100AD9AC1 /* Vodafone_tutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7065A2701F0E5C6100AD9AC1 /* Vodafone_tutorial.xcdatamodeld */; };
 		7065A2741F0E5C6100AD9AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7065A2731F0E5C6100AD9AC1 /* Assets.xcassets */; };
@@ -43,14 +57,28 @@
 
 /* Begin PBXFileReference section */
 		62111486B98C074D073A7936 /* Pods-Vodafone-tutorial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vodafone-tutorial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vodafone-tutorial/Pods-Vodafone-tutorial.debug.xcconfig"; sourceTree = "<group>"; };
+		7023B43C1F12194F00B83A50 /* UserPersonalDataContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersonalDataContract.swift; sourceTree = "<group>"; };
+		7023B43E1F121C0E00B83A50 /* UserPersonalDataPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersonalDataPresenter.swift; sourceTree = "<group>"; };
+		7023B4401F121C6500B83A50 /* UserPersonalDataRetriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersonalDataRetriver.swift; sourceTree = "<group>"; };
+		7023B4421F12308300B83A50 /* ProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		7023B4441F124EEA00B83A50 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7023B4461F12519500B83A50 /* VFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VFError.swift; sourceTree = "<group>"; };
+		7023B4481F12545E00B83A50 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		7023B44A1F1279A200B83A50 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		7035D27B1F11203800AC37D8 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		7035D27D1F1122D600AC37D8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7035D27F1F11377800AC37D8 /* AuthenticationContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationContract.swift; sourceTree = "<group>"; };
+		7035D2811F113C0000AC37D8 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		7035D2831F113C1500AC37D8 /* LoginDataRetriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDataRetriver.swift; sourceTree = "<group>"; };
+		7035D2851F114D0900AC37D8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7035D2871F11571700AC37D8 /* DataRetriverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRetriverProtocol.swift; sourceTree = "<group>"; };
+		7035D2891F11778100AC37D8 /* UserDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 		705918731F0E6AC400471EBA /* vodafone_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vodafone_thumb.png; sourceTree = "<group>"; };
 		705918751F0E6D4D00471EBA /* 2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png"; sourceTree = "<group>"; };
 		705918771F0E710F00471EBA /* gi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gi.png; sourceTree = "<group>"; };
 		7065A2661F0E5C6100AD9AC1 /* Vodafone-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vodafone-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7065A2691F0E5C6100AD9AC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7065A26B1F0E5C6100AD9AC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Vodafone-tutorial/ViewController.swift"; sourceTree = "<group>"; };
+		7065A26B1F0E5C6100AD9AC1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "Vodafone-tutorial/LoginViewController.swift"; sourceTree = "<group>"; };
 		7065A26E1F0E5C6100AD9AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7065A2711F0E5C6100AD9AC1 /* Vodafone_tutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vodafone_tutorial.xcdatamodel; sourceTree = "<group>"; };
 		7065A2731F0E5C6100AD9AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +141,12 @@
 		7065A25D1F0E5C6100AD9AC1 = {
 			isa = PBXGroup;
 			children = (
+				7023B44A1F1279A200B83A50 /* BasePresenter.swift */,
+				7023B4481F12545E00B83A50 /* ErrorManager.swift */,
+				7023B4461F12519500B83A50 /* VFError.swift */,
+				7023B4441F124EEA00B83A50 /* BaseViewController.swift */,
+				7035D2851F114D0900AC37D8 /* Network.swift */,
+				7035D2871F11571700AC37D8 /* DataRetriverProtocol.swift */,
 				7065A29E1F0E670F00AD9AC1 /* userproducts */,
 				7065A29D1F0E66FA00AD9AC1 /* userpersonaldata */,
 				7065A29C1F0E66DE00AD9AC1 /* authentication */,
@@ -171,8 +205,11 @@
 			children = (
 				705918731F0E6AC400471EBA /* vodafone_thumb.png */,
 				7065A29A1F0E64CE00AD9AC1 /* Vodafone_logo.png */,
-				7065A26B1F0E5C6100AD9AC1 /* ViewController.swift */,
+				7065A26B1F0E5C6100AD9AC1 /* LoginViewController.swift */,
 				7035D27B1F11203800AC37D8 /* UserData.swift */,
+				7035D27F1F11377800AC37D8 /* AuthenticationContract.swift */,
+				7035D2811F113C0000AC37D8 /* LoginPresenter.swift */,
+				7035D2831F113C1500AC37D8 /* LoginDataRetriver.swift */,
 			);
 			name = authentication;
 			sourceTree = "<group>";
@@ -182,6 +219,10 @@
 			children = (
 				705918771F0E710F00471EBA /* gi.png */,
 				705918751F0E6D4D00471EBA /* 2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png */,
+				7035D2891F11778100AC37D8 /* UserDataViewController.swift */,
+				7023B43C1F12194F00B83A50 /* UserPersonalDataContract.swift */,
+				7023B43E1F121C0E00B83A50 /* UserPersonalDataPresenter.swift */,
+				7023B4401F121C6500B83A50 /* UserPersonalDataRetriver.swift */,
 			);
 			name = userpersonaldata;
 			sourceTree = "<group>";
@@ -190,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				7035D27D1F1122D600AC37D8 /* Product.swift */,
+				7023B4421F12308300B83A50 /* ProductsViewController.swift */,
 			);
 			name = userproducts;
 			sourceTree = "<group>";
@@ -383,11 +425,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7065A26C1F0E5C6100AD9AC1 /* ViewController.swift in Sources */,
+				7023B4491F12545E00B83A50 /* ErrorManager.swift in Sources */,
+				7035D2841F113C1500AC37D8 /* LoginDataRetriver.swift in Sources */,
+				7065A26C1F0E5C6100AD9AC1 /* LoginViewController.swift in Sources */,
 				7065A2721F0E5C6100AD9AC1 /* Vodafone_tutorial.xcdatamodeld in Sources */,
+				7023B4471F12519500B83A50 /* VFError.swift in Sources */,
+				7035D2821F113C0000AC37D8 /* LoginPresenter.swift in Sources */,
 				7035D27E1F1122D600AC37D8 /* Product.swift in Sources */,
+				7023B4411F121C6500B83A50 /* UserPersonalDataRetriver.swift in Sources */,
+				7035D2861F114D0900AC37D8 /* Network.swift in Sources */,
+				7023B44B1F1279A200B83A50 /* BasePresenter.swift in Sources */,
+				7035D2881F11571700AC37D8 /* DataRetriverProtocol.swift in Sources */,
+				7035D2801F11377800AC37D8 /* AuthenticationContract.swift in Sources */,
+				7023B4431F12308300B83A50 /* ProductsViewController.swift in Sources */,
+				7023B43D1F12194F00B83A50 /* UserPersonalDataContract.swift in Sources */,
 				7035D27C1F11203800AC37D8 /* UserData.swift in Sources */,
+				7035D28A1F11778100AC37D8 /* UserDataViewController.swift in Sources */,
+				7023B4451F124EEA00B83A50 /* BaseViewController.swift in Sources */,
 				7065A26A1F0E5C6100AD9AC1 /* AppDelegate.swift in Sources */,
+				7023B43F1F121C0E00B83A50 /* UserPersonalDataPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
