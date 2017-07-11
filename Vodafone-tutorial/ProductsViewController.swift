@@ -13,14 +13,18 @@ import SafariServices
 
     
     
-class ProductsViewController :  BaseViewController , UITableViewDelegate, UITableViewDataSource{
+class ProductsViewController :  BaseViewController , UITableViewDelegate, UITableViewDataSource , ProductsViewProtocol{
     @IBOutlet weak var tableViewUI: UITableView!
     var products : [Product]?
-    var userData : UserData?
+    var presenterRef : ProductsPresenterProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title="Products"
+        products = [Product]()
+        self.presenterRef = ProductsPresenter(viewRef: self)
         tableViewUI!.delegate = self
         tableViewUI!.dataSource = self
+        presenterRef?.getUserProducts()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -60,18 +64,18 @@ class ProductsViewController :  BaseViewController , UITableViewDelegate, UITabl
         let titleLabel : UILabel = cell.viewWithTag(2) as! UILabel
         titleLabel.text = products?[indexPath.row].label
         
-        if let u = userData?.userType {
-            if u == "postpaid"{
+        if (presenterRef?.showSubtitleInRow())! {
                 let subtitleLabel : UILabel = cell.viewWithTag(3) as! UILabel
                 if let x = products?[indexPath.row].subtitle{
                     subtitleLabel.text = String(describing: x)
-                }
+                
             }
+        }
             else{
                 let subtitleLabel : UILabel = cell.viewWithTag(3) as! UILabel
                 subtitleLabel.isHidden = true
             }
-        }
+        
         
         
         
@@ -89,9 +93,12 @@ class ProductsViewController :  BaseViewController , UITableViewDelegate, UITabl
 
     }
     
-    func setProducts(products : [Product] , userData : UserData)  {
+
+    
+    func showProducts(products : [Product]){
         self.products = products
-        self.userData = userData
+        self.tableViewUI.reloadData()
     }
+
     
 }

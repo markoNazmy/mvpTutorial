@@ -18,4 +18,8 @@ class BasePresenter{
     func showLoginPage() {
         baseViewController.showLoginPage()
     }
+    
+    func showMessage(error : VFError) {
+        baseViewController.showError(error: error)
+    }
 }

@@ -15,26 +15,24 @@ class LoginPresenter: BasePresenter, LoginPresenterProtocol{
     init(viewRef : LoginViewProtocol) {
         self.viewRef = viewRef
         super.init(baseViewController: viewRef as! BaseViewController)
-
+        
         
     }
     
     func login(msdn : String , password : String) {
         retriverRef = setRetriver()
         if !msdn.isEmpty && !password.isEmpty{
-        retriverRef!.login(msdn: msdn, password: password)
+            (viewRef as! BaseViewController).startActivityIndicatorAnimating()
+            retriverRef!.login(msdn: msdn, password: password)
+            
         }
         else {
-            showUiError(error: VFError(errorCode: VFErrorCode.emptyFields.rawValue , errorMessage: "username OR password munt not be empty !"))
+            showMessage(error: VFError(errorCode: VFErrorCode.emptyFields.rawValue , errorMessage: "username OR password munt not be empty !"))
         }
     }
-    func showUiError(error : VFError){
-        viewRef.showUiError(error: error)
-    }
-    func showBackendError(error : VFError){
-        viewRef.showUiError(error: error)
-    }
+    
     func navigateToUserData(userData : UserData){
+        (viewRef as! BaseViewController).stopActivityIndicatorAnimating()
         viewRef.navigateToUserData(userData: userData)
     }
     func setRetriver() -> LoginRetriverProtocol {

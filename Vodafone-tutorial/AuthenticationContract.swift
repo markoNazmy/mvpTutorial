@@ -9,14 +9,12 @@
 import Foundation
 
 protocol LoginViewProtocol {
-    func showUiError(error : VFError)
     func navigateToUserData(userData : UserData)
 
 }
 protocol LoginPresenterProtocol {
     func login(msdn : String , password : String)
-    func showUiError(error : VFError)
-    func showBackendError(error : VFError)
+
     func navigateToUserData(userData : UserData)
 
 }

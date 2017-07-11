@@ -14,6 +14,8 @@ class LoginDataRetriver : LoginRetriverProtocol , DataRetriverProtocol{
 
     var presenterRef : LoginPresenterProtocol
     var url : String = "http://mvp-poc.getsandbox.com/authenticate?"
+    var userName : String?
+    var password : String?
     init(presenterRef : LoginPresenterProtocol) {
         self.presenterRef = presenterRef
     }
@@ -23,6 +25,8 @@ class LoginDataRetriver : LoginRetriverProtocol , DataRetriverProtocol{
         url.append("&")
         url.append("password=")
         url.append(password)
+        self.userName = msdn
+        self.password = password
         NetworkLayer.getDataFromServer(retriverRef: self, url: url)
     }
     
@@ -31,11 +35,13 @@ class LoginDataRetriver : LoginRetriverProtocol , DataRetriverProtocol{
         let userDefaults = UserDefaults.standard
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject : userData.self)
         userDefaults.set(encodedData, forKey: "userData")
+        userDefaults.set(userName, forKey: "userName")
+        userDefaults.set(password, forKey: "password")
         userDefaults.synchronize()
         presenterRef.navigateToUserData(userData: userData)
     }
     
     func onError(error: VFError) {
-        presenterRef.showBackendError(error: error)
+        (presenterRef as! BasePresenter).showMessage(error: error)
     }
 }

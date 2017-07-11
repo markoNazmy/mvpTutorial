@@ -24,12 +24,7 @@ class LoginViewController: BaseViewController , LoginViewProtocol {
         // Dispose of any resources that can be recreated.
     }
 
-    func showUiError(error: VFError) {
-        let alert = UIAlertController(title: "Alert", message: error.errorMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+
     func navigateToUserData(userData: UserData) {
         print(userData.self.givenName)
         
@@ -44,7 +39,6 @@ class LoginViewController: BaseViewController , LoginViewProtocol {
         
         let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "UserDataViewController") as! UserDataViewController
         let navController = UINavigationController(rootViewController: VC1)
-        VC1.setUserData(userData: userData)
 
         self.present(navController, animated:true, completion: nil)
         

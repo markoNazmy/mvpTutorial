@@ -21,45 +21,44 @@ class UserDataViewController : BaseViewController , UserPersonalDataViewProtocol
     var userData : UserData?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenterRef = UserPersonalDataPresenter(viewRef: self)
-        userName.text = userData?.surName
-        if userData?.userType == "postpaid" {
-            userType.text = userData?.userType
-        }
-        else{
-            userType.isHidden = true
-            userTypeLabel.isHidden = true
-        }
+        presenterRef?.getUserData()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.b
     }
     
     @IBAction func navigateToUserProducts(_ sender: Any) {
     }
-    func setUserData(userData : UserData) {
-        self.userData = userData
-    }
-    
-    func navigateToProducts(products: [Product]) {
-       print(products.toJSON())
+
+    func navigateToProducts() {
         
         let productsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
-        productsViewController.setProducts(products: products, userData: userData!)
         self.navigationController?.pushViewController(productsViewController, animated: true)
         
     }
-    func showUiError(error: VFError) {
-        let alert = UIAlertController(title: "Alert", message: error.errorMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+
+    
+    
+    func viewUserDataWithUserType(userData : UserData){
+        userName.text = userData.surName
+        userType.text = userData.userType
+        
     }
+
+    func hideUserType(){
+        self.userType.isHidden = true
+        self.userTypeLabel.isHidden = true
+    }
+
+
     
     
     @IBAction func getProducts(_ sender: Any) {
-        presenterRef?.getUserProducts(token: (userData?.token)!)
+        navigateToProducts()
     }
 }

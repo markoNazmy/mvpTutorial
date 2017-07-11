@@ -14,13 +14,14 @@ class BaseViewController : UIViewController {
     var indicator : UIActivityIndicatorView?
     func startActivityIndicatorAnimating() {
         indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        indicator?.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        indicator?.center = (window?.center)!
+        indicator?.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        indicator?.center = self.view.center
         indicator?.layer.cornerRadius = 05
         indicator?.clipsToBounds = true
         indicator?.isOpaque = false
         indicator?.backgroundColor = UIColor(white: 0.0, alpha: 0.6)
         
+        self.view.addSubview(indicator!)
         self.indicator?.startAnimating()
         self.window?.isUserInteractionEnabled = false
     }
@@ -39,6 +40,10 @@ class BaseViewController : UIViewController {
     func showLoginPage() {
         
         let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        if self.navigationController != nil{
+            self.navigationController?.popToRootViewController(animated: true)
+        }
         self.present(loginViewController, animated: true, completion: nil)
+        
     }
 }

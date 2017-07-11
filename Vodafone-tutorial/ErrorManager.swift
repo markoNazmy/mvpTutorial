@@ -13,9 +13,9 @@ class ErrorManager {
     public static func fetchError(dataRetriverProtocol : DataRetriverProtocol , errorCode : Int) {
         
         switch errorCode {
-        case VFErrorCode.requestedDataNotFound.rawValue : dataRetriverProtocol.onError(error: VFError(errorCode: VFErrorCode.requestedDataNotFound.rawValue , errorMessage: "not found in server !"))
+        case VFErrorCode.unAuthourized.rawValue : dataRetriverProtocol.onError(error: VFError(errorCode: VFErrorCode.unAuthourized.rawValue , errorMessage: "unAuthourized access !"))
             
-        case VFErrorCode.requestFaild.rawValue : dataRetriverProtocol.onError(error: VFError(errorCode: VFErrorCode.requestedDataNotFound.rawValue , errorMessage: "server error try again later !"))
+        case VFErrorCode.requestFaild.rawValue : dataRetriverProtocol.onError(error: VFError(errorCode: VFErrorCode.requestFaild.rawValue , errorMessage: "server error try again later !"))
             
         default: dataRetriverProtocol.onError(error: VFError(errorCode: VFErrorCode.dummyError.rawValue , errorMessage: "unKnown error !"))
             

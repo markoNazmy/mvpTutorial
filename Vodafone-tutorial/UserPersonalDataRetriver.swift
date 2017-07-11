@@ -9,28 +9,22 @@
 import Foundation
 import ObjectMapper
 
-class UserPersonalDataRetriver: UserPersonalDataRetriverProtocol , DataRetriverProtocol{
+class UserPersonalDataRetriver: BaseRetriver, UserPersonalDataRetriverProtocol , DataRetriverProtocol{
     
     var presenterRef : UserPersonalDataPresenterProtocol
-    var url : String = "http://mvp-poc.getsandbox.com/products?"
     init(presenterRef : UserPersonalDataPresenterProtocol) {
         self.presenterRef = presenterRef
     }
-    
-    func getUserProducts(token: String) {
-        url.append("token=")
-        url.append(token)
-        NetworkLayer.getDataFromServer(retriverRef: self, url: url)
-    }
-    
+        
     func onSuccess(json: [String : Any]) {
-        let itemsArr = json["items"] as! [[String: Any]]
-        let Products : [Product] = Mapper<Product>().mapArray(JSONArray: itemsArr)
-        presenterRef.navigateToProducts(products: Products)
-
+        
     }
     
     func onError(error: VFError) {
-        presenterRef.showUiError(error: error)
+
+    }
+    
+    func getUserDataForPresenter() {
+        presenterRef.showUserData(userData: getUserData())
     }
 }

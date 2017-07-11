@@ -19,19 +19,24 @@ class UserPersonalDataPresenter: BasePresenter , UserPersonalDataPresenterProtoc
 
     }
     
-    func getUserProducts(token: String) {
-        retriverRef = self.setRetriver()
-        retriverRef?.getUserProducts(token: token)
-    }
-    
-    func navigateToProducts(products: [Product]) {
-        viewRef.navigateToProducts(products: products)
+
+    func getUserData() {
+        retriverRef = setRetriver()
+        retriverRef?.getUserDataForPresenter()
     }
     func setRetriver() -> UserPersonalDataRetriverProtocol {
         return UserPersonalDataRetriver(presenterRef: self)
     }
     
-    func showUiError(error: VFError) {
-        viewRef.showUiError(error: error)
+    func showUserData(userData: UserData) {
+        
+        if userData.userType == "postpaid" {
+            viewRef.viewUserDataWithUserType(userData: (retriverRef as! BaseRetriver).getUserData())
+        }
+        else{
+            viewRef.viewUserDataWithUserType(userData: (retriverRef as! BaseRetriver).getUserData())
+            viewRef.hideUserType()
+        }
     }
+  
 }

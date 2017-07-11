@@ -9,16 +9,16 @@
 import Foundation
 
 protocol UserPersonalDataViewProtocol {
-    func navigateToProducts(products : [Product])
-    func showUiError(error : VFError)
+    func viewUserDataWithUserType(userData : UserData)
+    func hideUserType()
+
 }
 
 protocol UserPersonalDataPresenterProtocol {
-    func getUserProducts(token : String)
-    func navigateToProducts(products : [Product])
-    func showUiError(error : VFError)
+    func getUserData()
+    func showUserData(userData : UserData)
 }
 
 protocol UserPersonalDataRetriverProtocol {
-    func getUserProducts(token : String)
+    func getUserDataForPresenter()
 }
