@@ -14,9 +14,11 @@ import SafariServices
     
     
 class ProductsViewController :  BaseViewController , UITableViewDelegate, UITableViewDataSource , ProductsViewProtocol{
+    
     @IBOutlet weak var tableViewUI: UITableView!
     var products : [Product]?
     var presenterRef : ProductsPresenterProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="Products"
@@ -49,7 +51,6 @@ class ProductsViewController :  BaseViewController , UITableViewDelegate, UITabl
         return (products?.count)!
     }
     
-    
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -64,22 +65,13 @@ class ProductsViewController :  BaseViewController , UITableViewDelegate, UITabl
         let titleLabel : UILabel = cell.viewWithTag(2) as! UILabel
         titleLabel.text = products?[indexPath.row].label
         
-        if (presenterRef?.showSubtitleInRow())! {
-                let subtitleLabel : UILabel = cell.viewWithTag(3) as! UILabel
-                if let x = products?[indexPath.row].subtitle{
-                    subtitleLabel.text = String(describing: x)
-                
-            }
+        if let x = products?[indexPath.row].subtitle{
+            let subtitleLabel : UILabel = cell.viewWithTag(3) as! UILabel
+            subtitleLabel.text = String(describing: x)
+            (presenterRef?.showSubtitleInRow(label: subtitleLabel))
         }
-            else{
-                let subtitleLabel : UILabel = cell.viewWithTag(3) as! UILabel
-                subtitleLabel.isHidden = true
-            }
-        
-        
-        
-        
-        return cell
+            
+            return cell
     }
     
     //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,12 +85,9 @@ class ProductsViewController :  BaseViewController , UITableViewDelegate, UITabl
 
     }
     
-
-    
     func showProducts(products : [Product]){
         self.products = products
         self.tableViewUI.reloadData()
     }
-
     
 }

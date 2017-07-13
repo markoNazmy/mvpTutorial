@@ -13,24 +13,16 @@ class SplashScreenViewController : BaseViewController , SplashScreenViewProtocol
     
     @IBOutlet weak var splashGifImage: UIImageView!
     var presenterRef : SplashScreenPresenterProtocol!
-
     
     override func viewWillAppear(_ animated: Bool) {
         splashGifImage.image = UIImage.gifImageWithName("vodafone")
     }
+    
     override func viewDidAppear(_ animated: Bool) {
-        let userDefaults = UserDefaults.standard
-        if((userDefaults.string(forKey: "userName")) != nil && (userDefaults.string(forKey: "password")) != nil){
-            
-            presenterRef.login(msdn: (userDefaults.string(forKey: "userName"))!, password: (userDefaults.string(forKey: "password"))!)
-            
-        }
-            
-        else {
-            showLoginPage()
-        }
-        
+        presenterRef.login()
+       
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterRef = SplashScreenPresenter(viewRef: self)
@@ -39,15 +31,10 @@ class SplashScreenViewController : BaseViewController , SplashScreenViewProtocol
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func navigateToUserData(userData: UserData) {
-        print(userData.self.givenName)
-
-        
+    func navigateToUserData() {
         let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "UserDataViewController") as! UserDataViewController
         let navController = UINavigationController(rootViewController: VC1)
-        
         self.present(navController, animated:true, completion: nil)
-        
     }
     
 }

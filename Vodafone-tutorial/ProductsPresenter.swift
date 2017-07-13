@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 class ProductsPresenter: BasePresenter , ProductsPresenterProtocol {
     
     var viewRef : ProductsViewProtocol
     var retriverRef : ProductsRetriverProtocol?
-    
-    
+    var postpaid = "postpaid"
     init(viewRef : ProductsViewProtocol) {
         self.viewRef = viewRef
         super.init(baseViewController: viewRef as! BaseViewController)
@@ -28,7 +28,6 @@ class ProductsPresenter: BasePresenter , ProductsPresenterProtocol {
     }
     func showProducts(products : [Product]){
         (viewRef as! BaseViewController).stopActivityIndicatorAnimating()
-
         viewRef.showProducts(products: products)
     }
     
@@ -36,10 +35,11 @@ class ProductsPresenter: BasePresenter , ProductsPresenterProtocol {
         return ProductsRetriver(presenterRef: self)
     }
     
-    func showSubtitleInRow() -> Bool{
-        if (retriverRef as! BaseRetriver).getUserData().token == "postpaid" {
-            return true
+    func showSubtitleInRow(label : UILabel) {
+        if (retriverRef as! BaseRetriver).getUserData().userType != postpaid{
+            label.isHidden = true
         }
-        return false
     }
+    
+    
 }

@@ -16,14 +16,13 @@ class UserPersonalDataPresenter: BasePresenter , UserPersonalDataPresenterProtoc
     init(viewRef : UserPersonalDataViewProtocol) {
         self.viewRef = viewRef
         super.init(baseViewController: viewRef as! BaseViewController)
-
     }
-    
 
     func getUserData() {
         retriverRef = setRetriver()
         retriverRef?.getUserDataForPresenter()
     }
+    
     func setRetriver() -> UserPersonalDataRetriverProtocol {
         return UserPersonalDataRetriver(presenterRef: self)
     }

@@ -16,9 +16,11 @@ class LoginDataRetriver : LoginRetriverProtocol , DataRetriverProtocol{
     var url : String = "http://mvp-poc.getsandbox.com/authenticate?"
     var userName : String?
     var password : String?
+    
     init(presenterRef : LoginPresenterProtocol) {
         self.presenterRef = presenterRef
     }
+    
     func login(msdn: String, password: String) {
         url.append("msisdn=")
         url.append(msdn)

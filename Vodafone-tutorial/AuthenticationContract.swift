@@ -12,11 +12,10 @@ protocol LoginViewProtocol {
     func navigateToUserData(userData : UserData)
 
 }
+
 protocol LoginPresenterProtocol {
     func login(msdn : String , password : String)
-
     func navigateToUserData(userData : UserData)
-
 }
 
 protocol LoginRetriverProtocol {

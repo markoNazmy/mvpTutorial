@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BasePresenter{
     var baseViewController : BaseViewController
@@ -19,7 +20,7 @@ class BasePresenter{
         baseViewController.showLoginPage()
     }
     
-    func showMessage(error : VFError) {
-        baseViewController.showError(error: error)
+    func showMessage(error : VFError , blockOfCod :  ((_ : UIAlertAction)->Void)? = nil ) {
+        baseViewController.showError(error: error , okBlockOfCode: blockOfCod)
     }
 }

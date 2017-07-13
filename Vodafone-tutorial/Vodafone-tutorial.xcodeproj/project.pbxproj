@@ -174,13 +174,13 @@
 			isa = PBXGroup;
 			children = (
 				7019B6311F14B7F100DC7AEB /* BaseRetriver.swift */,
-				703DA13C1F1420AC00B0BC32 /* iOSDevCenters+GIF.swift */,
 				7023B44A1F1279A200B83A50 /* BasePresenter.swift */,
+				7023B4441F124EEA00B83A50 /* BaseViewController.swift */,
+				7035D2871F11571700AC37D8 /* DataRetriverProtocol.swift */,
 				7023B4481F12545E00B83A50 /* ErrorManager.swift */,
 				7023B4461F12519500B83A50 /* VFError.swift */,
-				7023B4441F124EEA00B83A50 /* BaseViewController.swift */,
 				7035D2851F114D0900AC37D8 /* Network.swift */,
-				7035D2871F11571700AC37D8 /* DataRetriverProtocol.swift */,
+				703DA13C1F1420AC00B0BC32 /* iOSDevCenters+GIF.swift */,
 				7065A29E1F0E670F00AD9AC1 /* userproducts */,
 				7065A29D1F0E66FA00AD9AC1 /* userpersonaldata */,
 				7065A29C1F0E66DE00AD9AC1 /* authentication */,
@@ -240,9 +240,9 @@
 			children = (
 				705918731F0E6AC400471EBA /* vodafone_thumb.png */,
 				7065A29A1F0E64CE00AD9AC1 /* Vodafone_logo.png */,
-				7065A26B1F0E5C6100AD9AC1 /* LoginViewController.swift */,
 				7035D27B1F11203800AC37D8 /* UserData.swift */,
 				7035D27F1F11377800AC37D8 /* AuthenticationContract.swift */,
+				7065A26B1F0E5C6100AD9AC1 /* LoginViewController.swift */,
 				7035D2811F113C0000AC37D8 /* LoginPresenter.swift */,
 				7035D2831F113C1500AC37D8 /* LoginDataRetriver.swift */,
 			);
@@ -254,8 +254,8 @@
 			children = (
 				705918771F0E710F00471EBA /* gi.png */,
 				705918751F0E6D4D00471EBA /* 2c1735f3-edf9-4194-8fa3-b5dd2b5116a1-large.png */,
-				7035D2891F11778100AC37D8 /* UserDataViewController.swift */,
 				7023B43C1F12194F00B83A50 /* UserPersonalDataContract.swift */,
+				7035D2891F11778100AC37D8 /* UserDataViewController.swift */,
 				7023B43E1F121C0E00B83A50 /* UserPersonalDataPresenter.swift */,
 				7023B4401F121C6500B83A50 /* UserPersonalDataRetriver.swift */,
 			);
@@ -266,8 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				7035D27D1F1122D600AC37D8 /* Product.swift */,
-				7023B4421F12308300B83A50 /* ProductsViewController.swift */,
 				7019B62B1F14B05E00DC7AEB /* ProductsContract.swift */,
+				7023B4421F12308300B83A50 /* ProductsViewController.swift */,
 				7019B62D1F14B3F600DC7AEB /* ProductsPresenter.swift */,
 				7019B62F1F14B40900DC7AEB /* ProductsRetriver.swift */,
 			);

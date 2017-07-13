@@ -12,6 +12,7 @@ import ObjectMapper
 class UserPersonalDataRetriver: BaseRetriver, UserPersonalDataRetriverProtocol , DataRetriverProtocol{
     
     var presenterRef : UserPersonalDataPresenterProtocol
+    
     init(presenterRef : UserPersonalDataPresenterProtocol) {
         self.presenterRef = presenterRef
     }

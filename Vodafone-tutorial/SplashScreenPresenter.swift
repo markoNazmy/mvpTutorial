@@ -17,24 +17,18 @@ class SplashScreenPresenter : BasePresenter ,SplashScreenPresenterProtocol  {
     init(viewRef : SplashScreenViewProtocol) {
         self.viewRef = viewRef
         super.init(baseViewController: viewRef as! BaseViewController)
-        
-        
     }
     
-    func login(msdn : String , password : String) {
+    func login() {
         retriverRef = setRetriver()
-        if !msdn.isEmpty && !password.isEmpty{
-            retriverRef!.login(msdn: msdn, password: password)
-            
-        }
-        else {
-            showMessage(error: VFError(errorCode: VFErrorCode.emptyFields.rawValue , errorMessage: "username OR password munt not be empty !"))
-        }
+        retriverRef!.login()
+
     }
     
-    func navigateToUserData(userData : UserData){
-        viewRef.navigateToUserData(userData: userData)
+    func navigateToUserData(){
+        viewRef.navigateToUserData()
     }
+    
     func setRetriver() -> SplashScreenRetriverProtocol {
         return SplashScreenRetriver(presenterRef: self)
     }

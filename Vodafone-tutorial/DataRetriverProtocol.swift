@@ -9,6 +9,8 @@
 import Foundation
 
 protocol DataRetriverProtocol {
+    
     func onSuccess(json : [String: Any])
+    
     func onError(error : VFError)
 }

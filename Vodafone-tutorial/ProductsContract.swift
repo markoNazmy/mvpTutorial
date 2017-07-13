@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ProductsViewProtocol{
     func showProducts(products : [Product])
@@ -14,7 +15,7 @@ protocol ProductsViewProtocol{
 
 protocol ProductsPresenterProtocol {
     func getUserProducts()
-    func showSubtitleInRow() -> Bool
+    func showSubtitleInRow(label : UILabel)
     func showProducts(products : [Product])
 }
 

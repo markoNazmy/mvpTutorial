@@ -22,6 +22,7 @@ class VFError {
 enum VFErrorCode : Int{
     case unAuthourized = 401
     case requestFaild = 503
+    case dataNotFound = 404
     case dummyError = 000
     case emptyFields = 76324836
 }

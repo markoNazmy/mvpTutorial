@@ -11,7 +11,6 @@ import Foundation
 protocol UserPersonalDataViewProtocol {
     func viewUserDataWithUserType(userData : UserData)
     func hideUserType()
-
 }
 
 protocol UserPersonalDataPresenterProtocol {

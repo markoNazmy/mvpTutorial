@@ -10,16 +10,16 @@ import Foundation
 
 
 protocol SplashScreenViewProtocol {
-    func navigateToUserData(userData : UserData)
+    func navigateToUserData()
 }
 
 protocol SplashScreenPresenterProtocol {
-    func login(msdn : String , password : String)
-    func navigateToUserData(userData : UserData)
+    func login()
+    func navigateToUserData()
 }
 
 protocol SplashScreenRetriverProtocol {
-    func login(msdn : String , password : String)
+    func login()
 }
 
 

@@ -13,6 +13,7 @@ class LoginViewController: BaseViewController , LoginViewProtocol {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var userName: UITextField!
     var presenterRef : LoginPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenterRef = LoginPresenter(viewRef: self)
@@ -24,25 +25,16 @@ class LoginViewController: BaseViewController , LoginViewProtocol {
         // Dispose of any resources that can be recreated.
     }
 
-
     func navigateToUserData(userData: UserData) {
-        print(userData.self.givenName)
-        
 //        let userDataNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "navigationcont") as! UINavigationController
 //        let userDataViewController = userDataNavigationController.viewControllers[0] as! UserDataViewController
 //        userDataViewController.setUserData(userData: userData)
 //        self.present(userDataViewController, animated: true, completion: nil)
-
-        
-        
-        
-        
         let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "UserDataViewController") as! UserDataViewController
         let navController = UINavigationController(rootViewController: VC1)
-
         self.present(navController, animated:true, completion: nil)
-        
     }
+    
     @IBAction func login(_ sender: Any) {
         presenterRef.login(msdn: userName.text!, password: password.text!)
     }

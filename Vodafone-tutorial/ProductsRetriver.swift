@@ -13,9 +13,11 @@ class ProductsRetriver : BaseRetriver, DataRetriverProtocol , ProductsRetriverPr
     
     var presenterRef : ProductsPresenterProtocol
     var url : String = "http://mvp-poc.getsandbox.com/products?"
+    
     init(presenterRef : ProductsPresenterProtocol) {
         self.presenterRef = presenterRef
     }
+    
     func getUserProducts(){
         url.append("token=")
         url.append(getUserData().token)
@@ -30,16 +32,18 @@ class ProductsRetriver : BaseRetriver, DataRetriverProtocol , ProductsRetriverPr
     }
     
     func onError(error: VFError) {
-        
         if error.errorCode == VFErrorCode.unAuthourized.rawValue {
             let userDefaults = UserDefaults.standard
             userDefaults.removeObject(forKey: "userName")
             userDefaults.removeObject(forKey: "password")
             userDefaults.removeObject(forKey: "userData")
-
-            (presenterRef as! BasePresenter).showLoginPage()
+            
+            (presenterRef as! BasePresenter).showMessage(error: error , blockOfCod: { _ in
+                (self.presenterRef as! BasePresenter).showLoginPage()})
         }
-        (presenterRef as! BasePresenter).showMessage(error: error)
-
+        else{
+            (presenterRef as! BasePresenter).showMessage(error: error)
+        }
     }
+    
 }
